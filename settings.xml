@@ -4,11 +4,6 @@
           xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
     <servers>
         <server>
-            <id>matsim-eth-bintray</id>
-            <username>${env.BINTRAY_USER}</username>
-            <password>${env.BINTRAY_PASSWORD}</password>
-        </server>
-        <server>
             <id>packagecloud-eth-ivt</id>
             <password>${env.PACKAGECLOUD_PASSWORD}</password>
         </server>
