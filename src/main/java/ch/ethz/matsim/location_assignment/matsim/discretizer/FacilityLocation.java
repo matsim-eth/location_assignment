@@ -8,10 +8,12 @@ import ch.ethz.matsim.location_assignment.assignment.discretization.DiscreteLoca
 public class FacilityLocation implements DiscreteLocation {
 	final private Vector2D location;
 	final private ActivityFacility facility;
+	private final int zoneId;
 
-	public FacilityLocation(ActivityFacility facility) {
+	public FacilityLocation(ActivityFacility facility, int zoneId) {
 		this.location = new Vector2D(facility.getCoord().getX(), facility.getCoord().getY());
 		this.facility = facility;
+		this.zoneId = zoneId;
 	}
 
 	@Override
@@ -21,5 +23,9 @@ public class FacilityLocation implements DiscreteLocation {
 
 	public ActivityFacility getFacility() {
 		return facility;
+	}
+
+	public int getZoneId()	{
+		return zoneId;
 	}
 }

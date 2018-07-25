@@ -31,6 +31,7 @@ public class LocationAssignmentPlanAdapter implements Function<MATSimSolverResul
 				activity.setCoord(facility.getCoord());
 				activity.setLinkId(facility.getLinkId());
 				activity.setFacilityId(facility.getId());
+				activity.getAttributes().putAttribute("tzone_discr", ((FacilityLocation) discreteLocation).getZoneId());
 			} else {
 				Vector2D coord = discreteLocation.getLocation();
 				activity.setCoord(new Coord(coord.getX(), coord.getY()));
