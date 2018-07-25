@@ -1,4 +1,6 @@
 .classpath
 .project
 .settings
+.idea
+location_assignment.iml
 target
