@@ -94,10 +94,19 @@ public class GravityChainSolver {
 				double previousDifference = expectedPreviousDistance - previousDistance;
 				double nextDifference = expectedNextDistance - nextDistance;
 
-				Vector2D updateFromPrevious = previousLocation.subtract(currentLocation).normalize()
-						.scalarMultiply(-gainFactor * previousDifference);
-				Vector2D updateFromNext = nextLocation.subtract(currentLocation).normalize()
-						.scalarMultiply(-gainFactor * nextDifference);
+				Vector2D previousDirection = previousLocation.subtract(currentLocation);
+				Vector2D nextDirection = nextLocation.subtract(currentLocation);
+
+				if (previousDirection.getNorm() > 0.0) {
+					previousDirection = previousDirection.normalize();
+				}
+
+				if (nextDirection.getNorm() > 0.0) {
+					nextDirection = nextDirection.normalize();
+				}
+
+				Vector2D updateFromPrevious = previousDirection.scalarMultiply(-gainFactor * previousDifference);
+				Vector2D updateFromNext = nextDirection.scalarMultiply(-gainFactor * nextDifference);
 
 				Vector2D update = updateFromPrevious.scalarMultiply(0.5).add(updateFromNext.scalarMultiply(0.5));
 				newLocations.add(currentLocation.add(update));
@@ -134,7 +143,7 @@ public class GravityChainSolver {
 			Vector2D direction = problem.getDestinationLocation().subtract(problem.getOriginLocation()).normalize();
 
 			location = problem.getOriginLocation().add(direction.scalarMultiply(ratio * directDistance));
-			isFeasible = false; 
+			isFeasible = false;
 		} else if (directDistance < Math.abs(originDistance - destinationDistance)) {
 			double maximumDistance = Math.max(originDistance, destinationDistance);
 			double ratio = originDistance / (originDistance + destinationDistance);
