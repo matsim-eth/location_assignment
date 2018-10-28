@@ -99,10 +99,14 @@ public class GravityChainSolver {
 
 				if (previousDirection.getNorm() > 0.0) {
 					previousDirection = previousDirection.normalize();
+				} else {
+					previousDirection = new Vector2D(1.0, 0.0);
 				}
 
 				if (nextDirection.getNorm() > 0.0) {
 					nextDirection = nextDirection.normalize();
+				} else {
+					nextDirection = new Vector2D(1.0, 0.0);
 				}
 
 				Vector2D updateFromPrevious = previousDirection.scalarMultiply(-gainFactor * previousDifference);
