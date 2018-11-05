@@ -18,5 +18,4 @@ Maintenance: Sebastian Hörl
 |location_assigment | MATSim|
 |------|-------|
 |0.3.x | 0.11.x|
-|0.2.x | 0.10.1|
-|0.1.x | 0.10.0|
+|0.2.x | 0.10.x|
