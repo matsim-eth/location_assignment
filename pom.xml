@@ -4,7 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ch.ethz.matsim</groupId>
 	<artifactId>location_assignment</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.0</version>
+	<description>Compatible with MATSim 0.10.0</description>
 
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -24,27 +25,20 @@
 			<id>matsim-eth</id>
 			<url>http://dl.bintray.com/matsim-eth/matsim</url>
 		</repository>
+		<repository>
+			<id>matsim</id>
+			<url>http://dl.bintray.com/matsim/matsim</url>
+		</repository>
 	</repositories>
 
 	<distributionManagement>
 		<repository>
-			<id>matsim-eth-bintray</id>
+			<id>matsim-eth</id>
 			<url>https://api.bintray.com/maven/matsim-eth/matsim/location_assignment/;publish=1</url>
 		</repository>
-		<snapshotRepository>
-			<id>packagecloud-eth-ivt</id>
-			<url>packagecloud+https://packagecloud.io/eth-ivt/matsim</url>
-		</snapshotRepository>
 	</distributionManagement>
 
 	<build>
-		<extensions>
-			<extension>
-				<groupId>io.packagecloud.maven.wagon</groupId>
-				<artifactId>maven-packagecloud-wagon</artifactId>
-				<version>0.0.6</version>
-			</extension>
-		</extensions>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -83,7 +77,7 @@
 
 	<profiles>
 		<profile>
-			<id>zip</id>
+			<id>standalone</id>
 			<build>
 				<plugins>
 					<plugin>
@@ -127,7 +121,7 @@
 		<dependency>
 			<groupId>org.matsim</groupId>
 			<artifactId>matsim</artifactId>
-			<version>0.10.0-nov17</version>
+			<version>0.10.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>
