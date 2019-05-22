@@ -4,15 +4,15 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ch.ethz.matsim</groupId>
 	<artifactId>location_assignment</artifactId>
-	<version>11.0.3</version>
-	<description>Compatible with MATSim 11.0</description>
+	<version>12.0.3</version>
+	<description>Compatible with MATSim 12.0 SNAPSHOT</description>
 
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<matsim.preferLocalDtds>true</matsim.preferLocalDtds>
 		<geotools.version>20.2</geotools.version>
-		<matsim.version>11.0</matsim.version>
+		<matsim.version>12.0-2019w20-SNAPSHOT</matsim.version>
 		<skipTests>false</skipTests>
 	</properties>
 
