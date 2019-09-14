@@ -1,3 +1,5 @@
+This repository has been moved to https://github.com/eqasim-org/eqasim-java
+
 # Relaxation/Discretization location assignment
 
 [![Build Status](https://travis-ci.org/matsim-eth/location_assignment.svg?branch=0.3.x)](https://travis-ci.org/matsim-eth/location_assignment)
